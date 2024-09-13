@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet2.css">
+</head>
+<body>
+    <div class="main">
+        <div class="textboxarea">
+            <input class="styled-textarea" id="inputarea" type="text">
+        </div>
+        <iv class="buttonarea">
+     
+            <button class="buttonStyle" id="seven">7</button>
+            <button class="buttonStyle" id="eight">8</button>
+            <button class="buttonStyle" id="nine">9</button>
+            <button class="delbutton" id="deletebutton">DEL</button>
+            <button class="buttonStyle" id="four">4</button>
+            <button class="buttonStyle" id="five">5</button>
+            <button class="buttonStyle" id="six">6</button>
+            <button class="buttonStyle" id="addbutton">+</button>
+            <button class="buttonStyle" id="one">1</button>
+            <button class="buttonStyle" id="two">2</button>
+            <button class="buttonStyle" id="three">3</button>
+            <button class="buttonStyle" id="minus">-</button>
+            <button class="buttonStyle" id="dotbutton">.</button>
+            <button class="buttonStyle" id="zero">0</button>
+            <button class="buttonStyle" id="devidebutton">/</button>
+            <button class="buttonStyle" id="multiply">x</button>
+            <button class="resetbutton" id="reset">RESET</button>
+            <button class="equalbutton" id="equalbutton">=</button>
+
+        </div>
+
+    </div>
+    <script>
+        let value = document.getElementById("inputarea");
+        let expression = "";
+        
+        zero.addEventListener( "click", ()=>{
+            value.value +='0'; 
+            expression = value.value;
+        });
+        one.addEventListener( "click", ()=>{
+            value.value +='1'; 
+            expression = value.value;
+        });
+        dotbutton.addEventListener( "click", ()=>{
+            value.value +='.'; 
+            expression = value.value;
+        });
+
+        seven.addEventListener( "click", ()=>{
+            value.value +='7'; 
+            expression = value.value;
+        });
+        two.addEventListener( "click", ()=>{
+            value.value +='2'; 
+            expression = value.value;
+        });
+
+        eight.addEventListener( "click", ()=>{
+            value.value +='8'; 
+            expression = value.value;
+        });
+
+        nine.addEventListener( "click", ()=>{
+            value.value +='9'; 
+            expression = value.value;
+        });
+
+        three.addEventListener( "click", ()=>{
+            value.value +='3';
+            expression = value.value; 
+        });
+        four.addEventListener( "click", ()=>{
+            value.value +='4'; 
+            expression = value.value;
+        });
+        five.addEventListener( "click", ()=>{
+            value.value +='5'; 
+            expression = value.value;
+        });
+        six.addEventListener( "click", ()=>{
+            value.value +='6'; 
+            expression = value.value;
+        });
+    
+
+        deletebutton.addEventListener( "click", ()=>{
+        value.value = value.value.slice(0,-1);
+        expression = value.value;
+        });
+
+        addbutton.addEventListener( "click", ()=>{
+        value.value = value.value;
+        expression = value.value;
+        });
+
+        document.getElementById("addbutton").onclick = function() {
+            value.value += '+';  
+            expression = value.value;
+        };
+
+        document.getElementById("minus").onclick = function() {
+            value.value += '-';  
+            expression = value.value;
+        };
+
+        document.getElementById("multiply").onclick = function() {
+            value.value += '*'; 
+            expression = value.value; 
+        };
+
+        document.getElementById("devidebutton").onclick = function() {
+            value.value += '/'; 
+            expression = value.value; 
+        };
+        reset.addEventListener( "click", ()=>{
+            value.value =""; 
+            expression = value.value;
+        });
+
+        equalbutton.addEventListener("click", ()=>{
+            try {
+                let result = eval(value.value);  
+                if (!Number.isInteger(result)) {
+                    result = result.toFixed(2);  // Limit to 2 decimal places if the result is not an integer
+                }
+                expression = result;
+                value.value = expression;
+            } catch (error) {
+                value.value = "Error"; 
+            }
+        });
+       
+
+
+    </script>
+</body>
+</html>
